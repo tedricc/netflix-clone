@@ -1,0 +1,36 @@
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 100;
+  transition: all 400ms ease-in;
+}
+
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__black {
+  background-color: rgb(20, 20, 20);
+}
+
+.nav__logo--wrapper {
+  width: 80px;
+  cursor: pointer;
+}
+
+.nav__logo {
+  width: 100%;
+}
+
+.nav__avatar--wrapper {
+  width: 40px;
+  cursor: pointer;
+}
+
+.nav__avatar {
+  width: 100%;
+}

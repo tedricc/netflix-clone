@@ -6,7 +6,7 @@ import requests from "../Requests";
 
 function Home() {
   return (
-    <div className="home">
+    <>
       <Nav />
       <Banner />
       <Row title="Trending" fetchUrl={requests.fetchTrending} />
@@ -16,11 +16,12 @@ function Home() {
       />
       <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
       <Row title="Action" fetchUrl={requests.fetchActionMovies} />
+      {/* add more if desired */}
       {/* <Row title="Comedy" fetchUrl={requests.fetchComedyMovies} />
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-      <Row title="Horror" fetchUrl={requests.fetchHorrorMovies} />
-      <Row title="Romance" fetchUrl={requests.fetchRomanceMovies} /> */}
-    </div>
+    <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+    <Row title="Horror" fetchUrl={requests.fetchHorrorMovies} />
+    <Row title="Romance" fetchUrl={requests.fetchRomanceMovies} /> */}
+    </>
   );
 }
 

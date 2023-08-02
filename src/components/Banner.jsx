@@ -38,7 +38,7 @@ function Banner() {
             />
           </figure>
           <div className="banner__container--background"></div>
-          <div className="banner__container--fade"></div>
+          {/* <div className="banner__container--fade"></div> */}
           <div className="banner__container">
             <h1 className="banner__title">
               {movie?.title || movie?.name || movie?.original_title}

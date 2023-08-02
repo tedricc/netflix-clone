@@ -6,9 +6,13 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSpinner,
+  faAngleRight,
+  faAngleLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faSpinner);
+library.add(faSpinner, faAngleRight, faAngleLeft);
 
 const container = document.getElementById("root");
 const root = createRoot(container);

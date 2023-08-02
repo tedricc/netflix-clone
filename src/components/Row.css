@@ -1,19 +1,49 @@
 .row {
+  position: relative;
   margin: 40px 48px;
 }
 
 .row__title {
   color: #e5e5e5;
+  margin-left: 20px;
 }
 
 .row__container {
   display: flex;
   overflow-x: scroll;
   scrollbar-width: none;
+  scroll-behavior: smooth;
+  margin: 0px 20px;
 }
 
 .row__container::-webkit-scrollbar {
   display: none;
+}
+
+.scroll__button {
+  position: absolute;
+  cursor: pointer;
+  color: #e5e5e5;
+  background: transparent;
+  opacity: 0.5;
+  border: none;
+  font-size: 28px;
+  outline: none;
+  z-index: 50;
+  top: 50%;
+  transition: all 450ms ease;
+}
+
+.scroll__button:hover {
+  opacity: 1;
+}
+
+.scroll__button--left {
+  left: 0;
+}
+
+.scroll__button--right {
+  right: 0;
 }
 
 /* skeleton state */

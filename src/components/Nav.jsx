@@ -27,6 +27,14 @@ function Nav() {
             alt=""
           />
         </figure>
+        {/* <div className="nav__links">
+          <div className="nav__link no-cursor">Home</div>
+          <div className="nav__link no-cursor">Series</div>
+          <div className="nav__link no-cursor">Films</div>
+          <div className="nav__link no-cursor">New & Popular</div>
+          <div className="nav__link no-cursor">My List</div>
+          <div className="nav__link no-cursor">Browse by Languages</div>
+        </div> */}
         <figure className="nav__avatar--wrapper">
           <img
             className="nav__avatar"

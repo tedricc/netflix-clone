@@ -22,8 +22,6 @@ function Banner() {
     // fetchData();
   }, []);
 
-  console.log(movie);
-
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   }
@@ -40,6 +38,7 @@ function Banner() {
             />
           </figure>
           <div className="banner__container--background"></div>
+          <div className="banner__container--fade"></div>
           <div className="banner__container">
             <h1 className="banner__title">
               {movie?.title || movie?.name || movie?.original_title}
@@ -95,8 +94,11 @@ function Banner() {
         </>
       ) : (
         <>
-          <div className="skeleton">
-            <FontAwesomeIcon icon="spinner" className="skeleton__loading" />
+          <div className="banner__skeleton">
+            <FontAwesomeIcon
+              icon="spinner"
+              className="banner__skeleton--loading"
+            />
           </div>
         </>
       )}

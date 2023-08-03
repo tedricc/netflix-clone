@@ -46,7 +46,7 @@
 
 .login__container {
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
@@ -66,4 +66,5 @@
 
 .login__container--subtitle {
   font-size: 28px;
+  color: #db0000;
 }

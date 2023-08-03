@@ -14,3 +14,20 @@ body {
 /* .app {
   background-color: rgb(20, 20, 20);
 } */
+
+/* skeleton state */
+
+.app__skeleton {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.app__skeleton--loading {
+  color: #831010;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  animation: spin 1.5s linear infinite;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
 
-function Nav() {
+function Nav({ logout }) {
   const [show, setShow] = useState(false);
 
   function transitionNavBar() {
@@ -35,7 +35,7 @@ function Nav() {
           <div className="nav__link no-cursor">My List</div>
           <div className="nav__link no-cursor">Browse by Languages</div>
         </div> */}
-        <figure className="nav__avatar--wrapper">
+        <figure className="nav__avatar--wrapper" onClick={logout}>
           <img
             className="nav__avatar"
             src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"

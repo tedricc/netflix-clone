@@ -1,10 +1,10 @@
-import React, { useRef, useState } from "react";
-import { auth, db } from "../Firebase";
+import React, { useState } from "react";
+import { auth } from "../Firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
+  // signOut,
+  // onAuthStateChanged,
 } from "firebase/auth";
 import Register from "./ui/Register";
 
@@ -26,11 +26,10 @@ function SignIn() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
+        console.log(user)
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
         alert(errorMessage);
         // ..
@@ -48,11 +47,10 @@ function SignIn() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
+        console.log(user)
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
         alert(errorMessage);
       });

@@ -7,9 +7,11 @@ import {
   // onAuthStateChanged,
 } from "firebase/auth";
 import Register from "./ui/Register";
+import { useNavigate } from "react-router-dom";
 
 function SignIn() {
   const [registerPage, setPage] = useState(false);
+  const navigate = useNavigate()
 
   function toggle() {
     setPage(!registerPage);
@@ -27,6 +29,7 @@ function SignIn() {
         // Signed in
         const user = userCredential.user;
         console.log(user)
+        navigate("/")
         // ...
       })
       .catch((error) => {
@@ -48,6 +51,7 @@ function SignIn() {
         // Signed in
         const user = userCredential.user;
         console.log(user)
+        navigate("/")
         // ...
       })
       .catch((error) => {

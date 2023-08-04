@@ -4,10 +4,10 @@ import Banner from "../components/Banner";
 import Row from "../components/Row";
 import requests from "../Requests";
 
-function Home({ logout }) {
+function Home() {
   return (
     <>
-      <Nav logout={logout} />
+      <Nav />
       <Banner />
       <Row title="Trending" fetchUrl={requests.fetchTrending} />
       <Row

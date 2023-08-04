@@ -1,0 +1,16 @@
+.info {
+  position: relative;
+  height: 100vh;
+}
+
+.info__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.info__title {
+  font-size: 48px;
+  color: #ffffff;
+}

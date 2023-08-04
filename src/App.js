@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Home from "./pages/Home";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Login from "./pages/Login";
 import { auth } from "./Firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Profile from "./pages/Profile";
 
 function App() {
   const [user, setUser] = useState({});
-
   const [loading, setLoading] = useState(true);
-
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -22,29 +22,32 @@ function App() {
         console.log(uid, email);
         setUser(user);
       } else {
-        setUser({})
+        setUser({});
       }
-      setLoading(false)
+      setLoading(false);
     });
     return unsubscribe;
   }, [user]);
 
   async function logout() {
-    setLoading(true)
+    setLoading(true);
     await signOut(auth);
-    console.log(user);
     setUser({});
+    console.log(user);
+    navigate("/sign-in");
   }
 
   useEffect(() => {
     if (!loading) {
-      if (user.uid) {
-        navigate("/");
-      } else {
+      if (!user.uid && location.pathname !== "/sign-in") {
+        // User is not logged in, redirect to the sign-in page
         navigate("/sign-in");
+      } else if (user.uid && location.pathname === "/sign-in") {
+        // User is logged in but tries to access the sign-in page, redirect to home page
+        navigate("/");
       }
     }
-  }, [loading, navigate, user.uid]);
+  }, [loading, navigate, user, location]);
 
   if (loading) {
     return (
@@ -56,8 +59,17 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home logout={logout} />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/profile" element={<Profile logout={logout} />} />
       <Route path="/sign-in" element={<Login />} />
+      {/* {user.uid ? (
+        <>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile logout={logout} />} />
+        </>
+      ) : (
+        <Route path="/sign-in" element={<Login />} />
+      )} */}
     </Routes>
   );
 }

@@ -60,7 +60,16 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/profile" element={<Profile logout={logout} />} />
+      <Route
+        path="/profile"
+        element={
+          <Profile
+            logout={logout}
+            email={user.email}
+            start={user.metadata?.creationTime}
+          />
+        }
+      />
       <Route path="/sign-in" element={<Login />} />
       {/* {user.uid ? (
         <>

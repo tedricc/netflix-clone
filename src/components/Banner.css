@@ -74,6 +74,7 @@
   font-size: 14px;
   font-weight: 600;
   transition: all 250ms ease;
+  cursor: not-allowed;
 }
 
 .banner__button--wrapper {

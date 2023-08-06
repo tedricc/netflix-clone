@@ -23,7 +23,7 @@ function SignIn() {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    console.log("i am register");
+    console.log("register");
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
@@ -45,7 +45,7 @@ function SignIn() {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    console.log("I am login");
+    console.log("login");
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in

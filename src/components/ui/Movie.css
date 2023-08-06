@@ -1,6 +1,7 @@
 .movie__img--wrapper {
   margin: 16px 4px;
   overflow: hidden;
+  cursor: not-allowed;
 }
 
 .movie__img {
